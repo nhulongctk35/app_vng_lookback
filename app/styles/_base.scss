@@ -1,0 +1,57 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-main;
+  color: $color-grey;
+  line-height: 1.5;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: $color-background;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+section {
+  text-align: center;
+  padding: 20px 0px 0px;
+
+  .section-title {
+    max-width: 650px;
+    margin: 0 auto;
+
+    h2 {
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+        color: $color-black-dark;
+      }
+
+  }
+
+  .section-content {
+    padding: 20px 0;
+  }
+
+}
+
