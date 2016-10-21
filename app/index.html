@@ -11,6 +11,41 @@
     <link rel="stylesheet" href="styles/csphotoselector.css">
 </head>
 <body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1040564409397942',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+
+        FB.AppEvents.logPageView();
+
+        FB.getLoginStatus(function(response) {
+            if (response.authResponse) {
+                $("#login-status").html("Logged in");
+            } else {
+                $("#login-status").html("Not logged in");
+            }
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    //        (function(d, s, id){
+    //            var js, fjs = d.getElementsByTagName(s)[0];
+    //            if (d.getElementById(id)) {return;}
+    //            js = d.createElement(s); js.id = id;
+    //            js.src = "//connect.facebook.net/vi_VN/sdk.js";
+    //            fjs.parentNode.insertBefore(js, fjs);
+    //        }(document, 'script', 'facebook-jssdk'));
+</script>
     <main>
         <section id="home">
             <div class="container">
@@ -69,31 +104,6 @@
     </main>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1040564409397942',
-                xfbml      : true,
-                version    : 'v2.6'
-            });
-
-            FB.getLoginStatus(function(response) {
-                if (response.authResponse) {
-                    $("#login-status").html("Logged in");
-                } else {
-                    $("#login-status").html("Not logged in");
-                }
-            });
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/vi_VN/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
     <script src="scripts/csphotoselector.js"></script>
     <script src="scripts/example.js"></script>
 </body>

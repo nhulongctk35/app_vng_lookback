@@ -4,8 +4,6 @@ $(document).ready(function () {
 	var selector, logActivity, callbackAlbumSelected, callbackPhotoUnselected, callbackSubmit;
 	var buttonOK = $('#CSPhotoSelector_buttonOK');
 	var o = this;
-
-
 	/* --------------------------------------------------------------------
 	 * Photo selector functions
 	 * ----------------------------------------------------------------- */
