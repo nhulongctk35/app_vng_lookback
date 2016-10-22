@@ -1,0 +1,16 @@
+footer {
+  background: #f05a22;
+  color: #fff;
+  text-align: center;
+
+  height: 45px;
+  overflow: hidden;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+
+  p {
+    padding: 11px 0;
+    text-transform: uppercase;
+  }
+}

@@ -1,4 +1,4 @@
-$fa-font-path: '../fonts';
+$fa-font-path: '/bower_components/font-awesome/fonts';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -11,6 +11,11 @@ $fa-font-path: '../fonts';
 @import "modules/header";
 @import "modules/navigation";
 @import "modules/home";
+@import "modules/about";
+@import "modules/service";
+@import "modules/resume";
+@import "modules/work";
+@import "modules/testimonial";
 @import "modules/footer";
 @import "responsive";
-@import "animate.css";
+

@@ -35,6 +35,12 @@ p {
   font-weight: $font-weight-normal;
   line-height: 160%;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 .section {
   padding: 50px 0px;
 }
@@ -46,7 +52,7 @@ p {
     text-transform: uppercase;
     font-weight: $font-weight-bold;
   }
-
+  
   .line {
     border-top: 3px solid $line-background;
     margin: 0 auto;
@@ -80,28 +86,4 @@ p {
   width: 100%;
   text-align: center;
   border-top: none;
-}
-
-.rotating {
-  display: inline-block;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
-  -moz-transform: rotateX(0) rotateY(0) rotateZ(0);
-  -ms-transform: rotateX(0) rotateY(0) rotateZ(0);
-  -o-transform: rotateX(0) rotateY(0) rotateZ(0);
-  transform: rotateX(0) rotateY(0) rotateZ(0);
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform-origin-x: 50%;
-}
-
-ul {
-  list-style-type: none;
 }

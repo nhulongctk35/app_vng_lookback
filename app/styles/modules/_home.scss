@@ -1,11 +1,56 @@
 #home {
-    background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9)), url(../images/home.jpg);
-      background-color: rgba(0, 0, 0, 0.5);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
-      height: 100vh;
-      color: #fff;
+  background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9)), url(../images/home.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+  height: 100vh;
+
+
+  .content {
+    padding-top: 25vh;
+
+    hr {
+	  background-color: $line-background;
+	  height: 2px;
+	  border: 0 none;
+	  width: 100px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+	}
+
+	h2 {
+		font-size: 4rem;
+	}
+
+    p {
+        margin: 0;
+        padding: 0;
+        color: $offwhite;
+    }
+
+    .arrow-down {
+        position: absolute;
+        bottom: 40px;
+        text-align: center;
+        width: 100%;
+
+        a.btn-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            border: 2px solid $offwhite;
+            padding: 10px;
+
+            &:hover, &:focus {
+                outline: 0;
+                color: $offwhite;
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+  }
 }

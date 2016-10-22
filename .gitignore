@@ -1,5 +1,8 @@
-node_modules/
-public/
-.idea/
-.tmp/
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+test/bower_components
 **/*.log
+.idea/

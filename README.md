@@ -1,11 +1,27 @@
-Responsive Web Design
-----------
+# PersonalBlog - Sample Project
 
-Pre-requisites: Node.js 4.x or later
+## How to Run
+***
+Note: `open command prompt with as administrator`
+### Development mode
+    # Go to source folder
 
-**Install Project Dependences:** ` npm install`
+    $ npm install
 
-**Run:** 
-  
--   **build:** `npm run sass`
--  **run server**: `npm run serve`
+    $ bower install
+
+    $ gulp serve
+
+Visit [http://localhost:9001](http://localhost:9001) and enjoy!
+
+### Production mode
+    # Go to source folder
+	
+	# gulp html
+
+    # gulp build
+
+    # gulp serve:dist
+
+
+Visit [http://localhost:9001](http://localhost:9001) and enjoy!

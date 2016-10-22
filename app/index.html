@@ -1,110 +1,176 @@
 <!doctype html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RWD</title>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Blog</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
     <link rel="stylesheet" href="styles/csphotoselector.css">
-</head>
-<body>
-<script>
-    window.fbAsyncInit = function() {
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <script>
+      window.fbAsyncInit = function () {
         FB.init({
-            appId      : '1040564409397942',
-            xfbml      : true,
-            version    : 'v2.8'
+          appId: '1040564409397942',
+          xfbml: true,
+          version: 'v2.6'
         });
 
         FB.AppEvents.logPageView();
 
-        FB.getLoginStatus(function(response) {
-            if (response.authResponse) {
-                $("#login-status").html("Logged in");
-            } else {
-                $("#login-status").html("Not logged in");
-            }
+        FB.getLoginStatus(function (response) {
+          if (response.authResponse) {
+            $("#login-status").html("Logged in");
+          } else {
+            $("#login-status").html("Not logged in");
+          }
         });
-    };
+      };
 
-    (function(d, s, id){
+      (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+      }(document, 'script', 'facebook-jssdk'));
 
-    //        (function(d, s, id){
-    //            var js, fjs = d.getElementsByTagName(s)[0];
-    //            if (d.getElementById(id)) {return;}
-    //            js = d.createElement(s); js.id = id;
-    //            js.src = "//connect.facebook.net/vi_VN/sdk.js";
-    //            fjs.parentNode.insertBefore(js, fjs);
-    //        }(document, 'script', 'facebook-jssdk'));
-</script>
-    <main>
-        <section id="home">
-            <div class="container">
-                <div class="section-title">
-                    <h2>VNG - look back</h2>
-                    <ul>
-                        <li>Status: <span id="login-status">Not logged in</span> | <a href="#" id="btnLogin">Login</a> | <a href="#" id="btnLogout">Log out</a></li>
-                        <li><a href="#" class="photoSelect">Select from your photos</a> (You'll need to log in first)</li>
-                    </ul>
-                    <div id="results">
-                        <p>ACTIVITY LOG</p>
-                    </div>
+    </script>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            <img src="images/logo-02.png" alt="long tran">
+          </a>
+        </div> <!-- navbar-header -->
+      </div>
+    </nav> <!-- navbar -->
+
+    <section id="home" class="section">
+      <div class="content text-center">
+        <div class="section-title fade-in">
+          <h2>VNG</h2>
+          <ul>
+            <li>Status: <span id="login-status">Not logged in</span> | <a href="#"
+                                                                          id="btnLogin">Login</a>
+              | <a href="#" id="btnLogout">Log out</a></li>
+            <li><a href="#" class="photoSelect">Select from your photos</a> (You'll need to
+              log in first)
+            </li>
+          </ul>
+          <div id="results">
+          </div>
+          <div id="CSPhotoSelector">
+            <div class="CSPhotoSelector_dialog">
+              <div class="CSPhotoSelector_form">
+                <div class="CSPhotoSelector_header">
+                  <a href="#" id="CSPhotoSelector_buttonClose">x</a>
+                  <p>Choose from Photos</p>
                 </div>
-                <!-- Markup for Carson Shold's Photo Selector -->
-                <div id="CSPhotoSelector">
-                    <div class="CSPhotoSelector_dialog">
-                        <div class="CSPhotoSelector_form">
-                            <div class="CSPhotoSelector_header">
-                                <a href="#" id="CSPhotoSelector_buttonClose">x</a>
-                                <p>Choose from Photos</p>
-                            </div>
-                            <div class="CSPhotoSelector_content CSAlbumSelector_wrapper">
-                                <p>Browse your albums until you find a picture you want to use</p>
-                                <div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
-                                    <div class="CSPhotoSelector_selectedCountContainer">Select an album</div>
-                                </div>
-                                <div class="CSPhotoSelector_photosContainer CSAlbum_container"></div>
-                            </div>
-
-                            <div class="CSPhotoSelector_content CSPhotoSelector_wrapper">
-                                <p>Select a new photo</p>
-                                <div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
-                                    <div class="CSPhotoSelector_selectedCountContainer"><span class="CSPhotoSelector_selectedPhotoCount">0</span> / <span class="CSPhotoSelector_selectedPhotoCountMax">0</span> photos selected</div>
-                                    <a href="#" id="CSPhotoSelector_backToAlbums">Back to albums</a>
-                                </div>
-                                <div class="CSPhotoSelector_photosContainer CSPhoto_container"></div>
-                            </div>
-
-                            <div id="CSPhotoSelector_loader"></div>
-
-
-                            <div class="CSPhotoSelector_footer CSPhotoSelector_clearfix">
-                                <a href="#" id="CSPhotoSelector_pagePrev" class="CSPhotoSelector_disabled">Previous</a>
-                                <a href="#" id="CSPhotoSelector_pageNext">Next</a>
-                                <div class="CSPhotoSelector_pageNumberContainer">
-                                    Page <span id="CSPhotoSelector_pageNumber">1</span> / <span id="CSPhotoSelector_pageNumberTotal">1</span>
-                                </div>
-                                <a href="#" id="CSPhotoSelector_buttonOK">OK</a>
-                                <a href="#" id="CSPhotoSelector_buttonCancel">Cancel</a>
-                            </div>
-                        </div>
+                <div class="CSPhotoSelector_content CSAlbumSelector_wrapper">
+                  <p>Browse your albums until you find a picture you want to use</p>
+                  <div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
+                    <div class="CSPhotoSelector_selectedCountContainer">Select an
+                      album
                     </div>
+                  </div>
+                  <div class="CSPhotoSelector_photosContainer CSAlbum_container"></div>
                 </div>
+
+                <div class="CSPhotoSelector_content CSPhotoSelector_wrapper">
+                  <p>Select a new photo</p>
+                  <div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
+                    <div class="CSPhotoSelector_selectedCountContainer"><span
+                      class="CSPhotoSelector_selectedPhotoCount">0</span> / <span
+                      class="CSPhotoSelector_selectedPhotoCountMax">0</span>
+                      photos selected
+                    </div>
+                    <a href="#" id="CSPhotoSelector_backToAlbums">Back to albums</a>
+                  </div>
+                  <div class="CSPhotoSelector_photosContainer CSPhoto_container"></div>
+                </div>
+
+                <div id="CSPhotoSelector_loader"></div>
+
+
+                <div class="CSPhotoSelector_footer CSPhotoSelector_clearfix">
+                  <a href="#" id="CSPhotoSelector_pagePrev"
+                     class="CSPhotoSelector_disabled">Previous</a>
+                  <a href="#" id="CSPhotoSelector_pageNext">Next</a>
+                  <div class="CSPhotoSelector_pageNumberContainer">
+                    Page <span id="CSPhotoSelector_pageNumber">1</span> / <span
+                    id="CSPhotoSelector_pageNumberTotal">1</span>
+                  </div>
+                  <a href="#" id="CSPhotoSelector_buttonOK">OK</a>
+                  <a href="#" id="CSPhotoSelector_buttonCancel">Cancel</a>
+                </div>
+              </div>
             </div>
-        </section> <!-- end home -->
-    </main>
+          </div>
+        </div>
+      </div>
+    </section> <!-- home -->
+    <footer>
+      <div class="container">
+        <p>&#169; 2016 VNG Coperation</p>
+      </div> <!-- container -->
+    </footer>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+     <!--Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/photoselector.js -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
     <script src="scripts/csphotoselector.js"></script>
     <script src="scripts/example.js"></script>
-</body>
+    <!-- endbuild -->
+
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/rotated.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
